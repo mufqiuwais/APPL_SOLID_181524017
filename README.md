@@ -23,7 +23,7 @@ Refactor code for this task, so **Detail Printer** don&#39;t need to ask **what 
 **Keterangan Penyelesaian** :
 Pada problem 3 juga saya tidak menemukan adanya kebutuhan untuk merefactor, karena menurut saya kode tersebut sudah SOLID dan tujuannya (yaitu ketika tipe employee baru (kelas baru yang extend kelas employee) dibuat, hanya perlu menambah kelas saja) dapat dilakukan. Untuk perbedaannya dari C# ke Java hanya di tipe tipe datanya saja saya ubah(Dari collection ke list), dan **DetailsPrinter** diubah agar output menjadi rapi.
 
-## 1.Recharge
+## 4.Recharge
 
 You are given a library with the following classes
 
@@ -42,7 +42,7 @@ Refactor the structure so that it conforms to the **Interface Segregation** prin
 **Keterangan Penyelesaian** :
 Interface Segregation Principles menyatakan bahwa sebuah interface tidak seharusnya memaksakan method yang tidak dipakai/diinginkan pada suatu kelas. Maka solusi dari problem ini adalah dengan menjadikan **Worker** abstract class yang tidak mengimplementasikan interface apapun. Kemudian menjadikan kelas **Employee** meng-extend kelas **Worker** sekaligus mengimplementasi interface **ISleeper**. Sama halnya dengan **Robot**, extend **Worker** dan implements **IRechargeable**. Dengan ini, tidak ada method dari interface yang tidak dipakai pada kelas manapun, setiap kelas dipasangkan dengan interfacenya masing-masing.
 
-## 2.Security Door
+## 5.Security Door
 
 You are given:
 
@@ -56,4 +56,7 @@ Refactor the structure so that it conforms to the **Interface Segregation** prin
 
 > ### Hints
 > Split **SecurityUI** into smaller role interfaces, one for each **SecurityCheck** class
+
+**Keterangan Penyelesaian** :
+Problem ini mirip dengan problem 4, yaitu masalah prinsip Interface Segregation Principles. Solusinya adalah memecah dan mengganti **SecurityUI** menjadi **IRequestKeyCard** dan **IRequestPinCode** lalu mengimplementasikannya pada kelas-kelas yang sesuai. Sehingga SOLID dapat tercapai.
 
